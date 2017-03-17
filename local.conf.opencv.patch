@@ -1,0 +1,20 @@
+--- build/conf/local.conf.bak	2017-03-17 10:48:26.404038266 +0800
++++ build/conf/local.conf	2017-03-16 10:46:25.349947120 +0800
+@@ -47,9 +47,9 @@
+ #MACHINE ?= "apalis-t30"
+ #MACHINE ?= "apalis-tk1"
+ #
+-#MACHINE ?= "colibri-imx6"
++MACHINE ?= "colibri-imx6"
+ #MACHINE ?= "colibri-imx7"
+-MACHINE ?= "colibri-t20"
++#MACHINE ?= "colibri-t20"
+ #MACHINE ?= "colibri-t30"
+ #MACHINE ?= "colibri-vf"
+ 
+@@ -268,3 +268,5 @@
+ # BB_GENERATE_MIRROR_TARBALLS = "0"
+ 
+ PREFERRED_PROVIDER_psplash-support = "psplash-angstrom"
++ACCEPT_FSL_EULA = "1"
++IMAGE_INSTALL_append = " opencv opencv-samples"

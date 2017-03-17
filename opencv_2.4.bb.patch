@@ -1,0 +1,23 @@
+--- layers/meta-openembedded/meta-oe/recipes-support/opencv/opencv_2.4.bb.bak	2017-03-16 10:49:58.829942410 +0800
++++ layers/meta-openembedded/meta-oe/recipes-support/opencv/opencv_2.4.bb	2017-03-16 13:28:53.933732044 +0800
+@@ -34,10 +34,8 @@
+                  ${@base_conditional("libdir", "/usr/lib32", "-DLIB_SUFFIX=32", "", d)} \
+ "
+ 
+-PACKAGECONFIG ??= "eigen jpeg png tiff v4l libv4l \
+-                   ${@bb.utils.contains("DISTRO_FEATURES", "x11", "gtk", "", d)} \
+-                   ${@bb.utils.contains("LICENSE_FLAGS_WHITELIST", "commercial", "libav", "", d)}"
+-
++PACKAGECONFIG ??= "eigen jpeg png tiff v4l libv4l libav tbb\
++                   ${@bb.utils.contains("DISTRO_FEATURES", "x11", "gtk", "", d)}"
+ PACKAGECONFIG[eigen] = "-DWITH_EIGEN=ON,-DWITH_EIGEN=OFF,libeigen,"
+ PACKAGECONFIG[gtk] = "-DWITH_GTK=ON,-DWITH_GTK=OFF,gtk+,"
+ PACKAGECONFIG[jasper] = "-DWITH_JASPER=ON,-DWITH_JASPER=OFF,jasper,"
+@@ -47,6 +45,7 @@
+ PACKAGECONFIG[png] = "-DWITH_PNG=ON,-DWITH_PNG=OFF,libpng,"
+ PACKAGECONFIG[tiff] = "-DWITH_TIFF=ON,-DWITH_TIFF=OFF,tiff,"
+ PACKAGECONFIG[v4l] = "-DWITH_V4L=ON,-DWITH_V4L=OFF,v4l-utils,"
++PACKAGECONFIG[tbb] = "-DWITH_TBB=ON,-DWITH_TBB=OFF,tbb,"
+ 
+ inherit distutils-base pkgconfig cmake
+ 

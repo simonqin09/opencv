@@ -1,0 +1,7 @@
+--- layers/meta-toradex-demos/recipes-support/opencv/opencv_2.4.bbappend.bak	2017-03-16 13:33:08.485726428 +0800
++++ layers/meta-toradex-demos/recipes-support/opencv/opencv_2.4.bbappend	2017-03-16 13:33:24.221726080 +0800
+@@ -12,3 +12,4 @@
+     file://0004-cap_ffmpeg-do-not-use-AVStream.r_frame_rate.patch \
+     file://0005-cap_ffmpeg-use-avcodec_encode_video2-where-available.patch \
+ "
++EXTRA_OECMAKE += "-DWITH_GSTREAMER=ON"
